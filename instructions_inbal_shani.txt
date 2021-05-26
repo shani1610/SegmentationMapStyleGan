@@ -1,22 +1,17 @@
 ## for style-based-gan-pytorch_our
 
 1) prepare the data using dataCoarse19k_sub
-   python style-based-gan-pytorch_our/prepare_data.py --out LMDB_PATH --n_worker 1 dataCoarse19k
+   python code/StyleGAN/prepare_data.py --out data/prepared_for_styleGAN/LMDB_PATH --n_worker 1 data/original_gtFine
 
 2) run the train using:
-    python style-based-gan-pytorch_our/train.py LMDB_PATH
+    python code/StyleGAN/train.py data/prepared_for_styleGAN/LMDB_PATH
 
 3) to generate new images after raining
-    python style-based-gan-pytorch_our/generate.py checkpoint/train_step-4.model --size 32
-
-    #to generate only one image- use --n_row 1 --n_col 1
-    #beter to run from the dir you want the images to be in instead of cp it every time.
-
+    python code/StyleGAN/generate.py code/StyleGAN/checkpoint/train_step-5.model --size 64
 
 #---------SPADE
 to generate new images for a trained data:
-run from the directory - "SPADE_External/SPADE" the following command-
-1) python test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot ../../dataCoarse19k/ --batchSize  8
+1) python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/original_for_SPADE/--batchSize  8
 (with batchSize larger it doesnt work)
 
 #to run the spade on the data that was generated from styleGAN
@@ -27,7 +22,7 @@ python test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroo
 python train.py --name cityscapes_our/ --dataset_mode custom --label_dir ../../data_labelIds --image_dir ../../data_leftImgs --label_nc 35 --no_instance --no_pairing_check
 (doesnt work there is an assertion error)
 
-## these were for styleGan2
+## ----------------these were for styleGan2
 1) creating the data directory, you can do it by writing the next command in terminal:
 sipl-gpu28-u:~/Downloads/gtCoarse/gtCoarse/train_extra> cp ./*/*color.png ~/project_inbal_shani/PycharmProjects/GANsProject/DCGAN_Tutorial/dataCoarse19k
 
