@@ -40,18 +40,35 @@ def our_clustering(img):
 
 
 if __name__ == '__main__':
-    output = 'generated_samples/fine_23_5_21/gtFine/val/frankfurt/'
-    input = 'generated_samples/fine_23_5_21_from_styleGan'
+    output = 'data/generated_for_SPADE/gtFine/val/'
+    input_dir = 'data/generated_from_styleGAN/'
+    input_leftImg_dir = 'data/generated_for_SPADE/leftImg8bit/val/frankfurt/'
     img_array = []
-    for filename in glob.glob(os.path.join(input, '*.png')):
+    input_leftImg_dir_array =[]
+    i = 0
+    for filename in glob.glob(os.path.join(input_leftImg_dir, '*.png')):
+        filename_base = os.path.basename(filename)
+        filename_saved = '_'.join(filename_base.split('_')[:-2])
+        print(filename_saved)
+        input_leftImg_dir_array[i] = filename
+        i = i + 1
+        if (i == 50):
+            break
+
+    i=0
+    for filename in glob.glob(os.path.join(input_dir, '*.png')):
         img = Image.open(filename, 'r')
 #         img = img.resize((64, 64))
 #         #img = img.resize((2048, 1024))
 #         img.save('img_resize.png')
 #         img = Image.open('img_resize.png', 'r')
+        print("i = ", i)
         img = img.load()
         clustering_img, labelIds_img = our_clustering(img)
-        filename_base = os.path.basename(filename)
-        filename_saved = '_'.join(filename_base.split('_')[:-2])
-        clustering_img.save(filename_saved + '_gtFine_color.png', 'PNG')
-        labelIds_img.save(filename_saved + "_gtFine_labelIds.png", 'PNG')
+        #filename_base = os.path.basename(filename)
+        #filename_saved = '_'.join(filename_base.split('_')[:-2])
+        clustering_img.save(output + input_leftImg_dir_array[i] + '_gtFine_color.png', 'PNG')
+        labelIds_img.save(output + input_leftImg_dir_array[i] + "_gtFine_labelIds.png", 'PNG')
+        i = i+1
+        if (i == 50):
+            break
