@@ -1,21 +1,58 @@
 # Creating Segmentation Maps using Style GAN
 
+## Installation
+
+to connect to git repository if didnt do clone in the fir time ( to define git repository)
+
+`git remote set-url origin  https://github.com/shani1610/DCGAN_Tutorial.git`
+
+## Dataset Preparation
+
+The data directory can be downloaded [here](https://github.com/nightrome/cocostuff). the original dataset were downloaded [here](https://www.cityscapes-dataset.com/)
+
+The data directory contains the following folders:
+
+* generated_for_SPADE - the generated from styleGAN segmantation map after running the script prepare_for_spade that clustering the in-between pixels to values that correspond to the cityscape classes and generate the label maps that required for running the SPADE modoule. 
+
+* generated_from_SPADE
+
+* generated_from_styleGAN - the generated segmantation maps.
+
+* original_coarse - the data coarse was used for the DCGAN part because it requires a lot more data then fine images number. 
+
+* original_for_SPADE - you can also ran the SPADE on the original data and get full size image. 
+
+* original_gtFine - this is used in the styleGAN part.
+
+* prepared_for_styleGAN - the LMDB files required for the styleGAN training. 
+
 ## StyleGAN
 
 1) prepare the data:
 
    `python code/StyleGAN/prepare_data.py --out data/prepared_for_styleGAN/LMDB_PATH --n_worker 1 data/original_gtFine`
+   
+   This will convert images to jpeg and pre-resizes it, Then you can train StyleGAN.
+   
+   You can use our LMDB files which included in the data directory in prepared_for_styleGAN folder. 
 
 2) train:
 
     `python code/StyleGAN/train.py data/prepared_for_styleGAN/LMDB_PATH`
+    
+    this generate the model in the checkpoint directory and a samples directory which is stored in the data directory in the generated_from_styleGAN.
+    
+    You can use our checkpoint directory that can be download [here] (). extract this .zip in code/StyleGAN/checkpoint.
 
 3) generate new images after training:
 
     `python code/StyleGAN/generate.py code/StyleGAN/checkpoint/train_step-5.model --size 64`
+    
+    make sure --size is corresponding to the size of the train_step-*.model .
 
 ## SPADE
 
+   in order to 
 1) generate new images from the original cityscape dataset:
 
   `python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/original_for_SPADE/--batchSize  8`
@@ -32,12 +69,7 @@
 
 (doesnt work there is an assertion error)
 
-## git
-
-to connect to git repository if didnt do clone in the fir time ( to define git repository)
-
-`git remote set-url origin  https://github.com/shani1610/DCGAN_Tutorial.git`
 
 ## Acknowledgments
 
-This code borrows heavily from style-based-gan-pytorch and SPADE. We thank the creators. 
+This code borrows heavily from [style-based-gan-pytorch](https://github.com/rosinality/style-based-gan-pytorch) and [SPADE](https://github.com/NVlabs/SPADE). We thank the creators. 
