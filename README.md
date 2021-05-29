@@ -33,6 +33,10 @@ The data directory contains the following folders:
 
 * `original_gtFine` - this is used in the styleGAN part.
 
+* `original_leftImg8bit` - the realistic images.
+
+* `original_leftImg8bit_prepared_for_styleGAN` - the LMDB files required for the styleGAN training. 
+
 * `prepared_for_styleGAN` - the LMDB files required for the styleGAN training. 
 
 ## StyleGAN
@@ -82,6 +86,10 @@ The data directory contains the following folders:
 ## Evaluation
 
 you can find the relavent files in `code/FID`.
+
+```bash
+python code/FID/fid_score.py path/to/dataset1 path/to/dataset2
+```
 
 ## Acknowledgments
 
