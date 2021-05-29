@@ -44,15 +44,17 @@ if __name__ == '__main__':
     input_dir = 'data/generated_from_styleGAN/'
     input_leftImg_dir = 'data/generated_for_SPADE/leftImg8bit/val/frankfurt/'
     img_array = []
-    input_leftImg_dir_array =[]
+    input_leftImg_dir_array = []
     i = 0
     for filename in glob.glob(os.path.join(input_leftImg_dir, '*.png')):
+        print(filename)
         filename_base = os.path.basename(filename)
-        filename_saved = '_'.join(filename_base.split('_')[:-2])
+        filename_saved = '_'.join(filename_base.split('_')[:-1])
         print(filename_saved)
-        input_leftImg_dir_array[i] = filename
+        input_leftImg_dir_array.append(filename_saved)
+        #input_leftImg_dir_array[i] = filename
         i = i + 1
-        if (i == 50):
+        if (i == 202):
             break
 
     i=0
@@ -70,5 +72,5 @@ if __name__ == '__main__':
         clustering_img.save(output + input_leftImg_dir_array[i] + '_gtFine_color.png', 'PNG')
         labelIds_img.save(output + input_leftImg_dir_array[i] + "_gtFine_labelIds.png", 'PNG')
         i = i+1
-        if (i == 50):
+        if (i == 200):
             break

@@ -29,7 +29,7 @@ plotImages = True  #change to False when working on sipl computer
 ######################################################################
 # Inputs
 # Root directory for dataset
-dataroot = "data/original_coarse/cities
+dataroot = "data/original_coarse/"
 
 # Number of workers for dataloader
 workers = 0
@@ -92,7 +92,7 @@ if plotImages:
     plt.axis("off")
     plt.title("Training Images")
     plt.imshow(np.transpose(vutils.make_grid(real_batch[0].to(device)[:64], padding=2, normalize=True).cpu(),(1,2,0)))
-    plt.savefig("./output/Training_Images.jpg")
+    plt.savefig("./results/output_dcgan/Training_Images.jpg")
 ######################################################################
 # Implementation
 
@@ -314,7 +314,7 @@ if plotImages:
     plt.ylabel("Loss")
     plt.legend()
     #plt.show()
-    plt.savefig("./output/Generator_Discriminator_Loss.jpg")
+    plt.savefig("./results/output_dcgan/Generator_Discriminator_Loss.jpg")
 
     #%%capture
     #fig = plt.figure(figsize=(8,8))
@@ -341,6 +341,6 @@ if plotImages:
     #np.transpose(img_list[-1], (1, 2, 0))
     plt.imshow(np.transpose(img_list[-1],(1,2,0)))
     #plt.show()
-    plt.savefig("./output/real_vs_fake.jpg")
+    plt.savefig("./results/output_dcgan/real_vs_fake.jpg")
 
 # end

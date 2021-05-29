@@ -1,0 +1,11 @@
+/code/StyleGAN/checkpoint/
+/code/StyleGAN/checkpoint_segmentation_map/
+/code/StyleGAN/sample_segmentation_map/
+/code/StyleGAN/sample/
+/data/*/*.png
+/data/*/*/*.png
+/data/*/*/*/*.png
+/data/*/*/*/*/*.png
+/code/SPADE/results/
+/code/SPADE/checkpoints/
+/results/

@@ -231,7 +231,7 @@ def train(args, dataset, generator, discriminator):
 
             utils.save_image(
                 torch.cat(images, 0),
-                f'sample/{str(i + 1).zfill(6)}.png',
+                f'code/StyleGAN/sample/{str(i + 1).zfill(6)}.png',
                 nrow=gen_i,
                 normalize=True,
                 range=(-1, 1),
@@ -239,7 +239,7 @@ def train(args, dataset, generator, discriminator):
 
         if (i + 1) % 10000 == 0:
             torch.save(
-                g_running.state_dict(), f'checkpoint/{str(i + 1).zfill(6)}.model'
+                g_running.state_dict(), f'code/StyleGAN/checkpoint/{str(i + 1).zfill(6)}.model'
             )
 
         state_msg = (

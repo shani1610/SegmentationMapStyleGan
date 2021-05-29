@@ -10,9 +10,14 @@
     python code/StyleGAN/generate.py code/StyleGAN/checkpoint/train_step-5.model --size 64
 
 #---------SPADE
+prepare generated data for spade:
+python
+
 to generate new images for a trained data:
-1) python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/original_for_SPADE/--batchSize  8
+1) python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/original_for_SPADE/ --batchSize  8 --no_instance --label_nc 36
 (with batchSize larger it doesnt work)
+python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/generated_for_SPADE/ --batchSize 4 --no_instance --label_nc 36
+
 
 #to run the spade on the data that was generated from styleGAN
 python test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot ../../generated_samples/fine_25_5_21_eralFine/ --batchSize 8 --label_nc 36 --no_instance  --crop_size 64 --load_size 64
