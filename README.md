@@ -1,10 +1,10 @@
 # Creating Segmentation Maps using Style GAN
 
-![GauGAN demo](https://nvlabs.github.io/SPADE//images/dddd.gif) # change here the image
+![](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2015/07/zuerich00.png)
 
-### [Project page](https://nvlabs.github.io/SPADE/) |   [Paper](https://arxiv.org/abs/1903.07291) | [Online Interactive Demo of GauGAN](https://www.nvidia.com/en-us/research/ai-playground/) | [GTC 2019 demo](https://youtu.be/p5U4NgVGAwg) | [Youtube Demo of GauGAN](https://youtu.be/MXWm6w4E5q0)
+### [Project Report (Hebrew)](https://nvlabs.github.io/SPADE/) | [Youtube Demo of styleGAN training process](https://youtu.be/MXWm6w4E5q0)
 
-students: [Inbal Aharoni](http://taesung.me/),  [Shani Israelov](http://mingyuliu.net/), supervised by: [Idan kligvasser ](https://tcwang0509.github.io/)
+Students: [Inbal Aharoni](mailto:AHARONINBAL@gmail.com),  [Shani Israelov](mailto:shani1610@gmail.com), Supervised by: [Idan kligvasser](mailto:kligvasser@gmail.com)
 
 The code is released for academic research use only.
 
