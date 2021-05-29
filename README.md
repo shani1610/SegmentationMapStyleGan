@@ -65,8 +65,7 @@ The data directory contains the following folders:
     make sure `--size` is corresponding to the size of the train_step-*.model .
 
 ## SPADE
-
-   in order to 
+ 
 1) generate new images from the original cityscape dataset:
 ```bash
   python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/original_for_SPADE/ --batchSize  8
@@ -79,6 +78,10 @@ The data directory contains the following folders:
   python code/SPADE/test.py --name cityscapes_pretrained/ --dataset_mode cityscapes --dataroot data/generated_for_SPADE/ --batchSize 4 --no_instance --label_nc 36 --no_pairing_check
        --crop_size 64 --load_size 64
   ```
+  
+## Evaluation
+
+you can find the relavent files in `code/FID`.
 
 ## Acknowledgments
 
