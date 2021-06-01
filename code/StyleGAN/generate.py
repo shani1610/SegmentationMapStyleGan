@@ -98,7 +98,8 @@ if __name__ == '__main__':
     #utils.save_image(img, 'sample.png', nrow=args.n_col, normalize=True, range=(-1, 1))
     #utils.save_image(img, 'sample.png', nrow=1, normalize=True, range=(-1, 1))
 
-    output_dir = 'data/generated_from_styleGAN/'
+    #output_dir = 'data/generated_from_styleGAN/'
+    output_dir = 'data/generated_realistic_from_styleGAN'
     for j in range(200):
         img = sample(generator, step, mean_style, args.n_row * args.n_col, device)
         utils.save_image(img, output_dir + f'sample_{j}.png', nrow=args.n_col, normalize=True, range=(-1, 1))
