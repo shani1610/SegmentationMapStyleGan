@@ -17,7 +17,7 @@ git remote set-url origin  https://github.com/shani1610/DCGAN_Tutorial.git
 
 ## Dataset Preparation
 
-The data directory can be downloaded [here](https://github.com/nightrome/cocostuff). the original dataset were downloaded [here](https://www.cityscapes-dataset.com/)
+The data directory can be downloaded [here](https://drive.google.com/drive/folders/12W2-Ke5p_asRKctR7YtWLbVLvuGyOGdF?usp=sharing). the original dataset were downloaded [here](https://www.cityscapes-dataset.com/)
 
 The data directory contains the following folders:
 
@@ -59,7 +59,7 @@ The data directory contains the following folders:
     
     this generate the model in the checkpoint directory and a samples directory which is stored in the data directory in the generated_from_styleGAN.
     
-    You can use our checkpoint directory that can be download [here] (). extract this .zip in `code/StyleGAN/checkpoint`.
+    You can use our checkpoint directory that can be download [here] (https://drive.google.com/drive/folders/1c550S68Q_17frHlmM6qF125gwOzOsPeL?usp=sharing). extract this .zip in `code/StyleGAN/checkpoint`.
 
 3) generate new images after training:
 
