@@ -2,7 +2,7 @@
 
 ![](https://www.cityscapes-dataset.com/wordpress/wp-content/uploads/2015/07/zuerich00.png)
 
-### [Project Report (Hebrew)](https://nvlabs.github.io/SPADE/) | [Youtube Demo of styleGAN training process](https://youtu.be/MXWm6w4E5q0)
+### [Project Report (Hebrew)](https://drive.google.com/file/d/1Oc4AkuyXtDDr91SDA__4GwEamimEKxdS/view?usp=sharing) | [Youtube Demo of styleGAN training process](https://youtu.be/MXWm6w4E5q0)
 
 Students: [Inbal Aharoni](mailto:AHARONINBAL@gmail.com),  [Shani Israelov](mailto:shani1610@gmail.com), Supervised by: [Idan kligvasser](mailto:kligvasser@gmail.com)
 
