@@ -10,9 +10,9 @@ The code is released for academic research use only.
 
 ## Installation
 
-to connect to git repository if didnt do clone in the fir time ( to define git repository)
+connect to git repository if did not clone in the first time.
 ```bash
-git remote set-url origin  https://github.com/shani1610/DCGAN_Tutorial.git
+git remote set-url origin  https://github.com/shani1610/SegmentationMapStyleGan.git
 ```
 
 ## Dataset Preparation
@@ -59,7 +59,7 @@ The data directory contains the following folders:
     
     this generate the model in the checkpoint directory and a samples directory which is stored in the data directory in the generated_from_styleGAN.
     
-    You can use our checkpoint directory that can be download [here] (https://drive.google.com/drive/folders/1c550S68Q_17frHlmM6qF125gwOzOsPeL?usp=sharing). extract this .zip in `code/StyleGAN/checkpoint`.
+    You can use our checkpoint directory that can be download [here](https://drive.google.com/drive/folders/1c550S68Q_17frHlmM6qF125gwOzOsPeL?usp=sharing). extract this .zip in `code/StyleGAN/checkpoint`.
 
 3) generate new images after training:
 
